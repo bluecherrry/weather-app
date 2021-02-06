@@ -1,0 +1,24 @@
+.container{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 2rem;
+  color: aliceblue;
+}
+.container h1 {
+
+  text-transform: capitalize;
+  font-size: 3rem;
+  
+}
+.minmax {
+  padding: 2rem;
+  display: flex;
+ justify-content: space-between;
+ 
+}
+.minmax span{
+  border: 1px solid wheat;
+padding: 1rem;
+border-radius: 0.5rem;
+}
