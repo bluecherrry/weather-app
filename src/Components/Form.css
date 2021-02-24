@@ -1,0 +1,9 @@
+
+form input[name="city"],form input[name="country"] {
+  background-color: aliceblue;
+  color:black ;padding: 10px 15px;
+  border-radius: 10px;outline-style: none;
+}
+button {border-radius: 10px;
+padding: 10px 15px;margin-top: 1rem;
+}

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Weather.css'
 
-import {WiCloudy } from 'weather-icons-react'
 export default function Weather(props) {
   function minmaxTemp(min,max) {
     return (
@@ -11,17 +10,24 @@ export default function Weather(props) {
       </h3>
     );
   }
+   ///*  getting data from api  *
   return (
     <div className="container">
       <div className="cards">
         <h1>
-       {props.city} , {props.country}
+       {props.city} 
+       {/* specify value to these properties (app.js) */}
        </h1>
-      <h5 >
-         <WiCloudy size={200} color="#ffff" >{props.cloud}</WiCloudy>
-      </h5>
-        
-       <h2>{props.temp_cel}</h2>     
+      <h3 >
+      <i className={`wi ${props.weatherIcon} we-icon`} />
+      </h3>
+        {/* get cel */}
+       {/* <h2>{props.temp_cel} </h2>      */}
+       {props.temp_cel ? (
+          <h1>{props.temp_cel}&deg;</h1> 
+
+        ) : null}
+ 
        {minmaxTemp(props.temp_min,props.temp_max)}
         
        <h5>{props.description}</h5>
