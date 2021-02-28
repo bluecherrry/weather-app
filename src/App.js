@@ -1,16 +1,13 @@
 
 import React from 'react'
 import './App.css';
-//import {WiCloudy } from 'weather-icons-react'
 import Weather from './Components/Weather';
+import FormApi from './Components/FormApi'
 import Form from './Components/Form'
 import "weather-icons/css/weather-icons.css";
 //api key
 const API = 'd8c0fb6daff301af1f50b218cedde999'
-
 class App extends React.Component {
-
-
   constructor() {
 
     super();
@@ -68,17 +65,11 @@ class App extends React.Component {
   }
     calCelsius(temp) {
     return Math.floor(temp - 273.15);
-    
-
   }
-
   getWeather = async (e) => {
-
         e.preventDefault();
-
       const city =e.target.elements.city.value;
       const country =e.target.elements.country.value;
-
       if(city && country) {
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API}`)
         const response = await api_call.json()
@@ -91,10 +82,10 @@ class App extends React.Component {
            temp_min:this.calCelsius(response.main.temp_min),
            description:response.weather[0].description,
            error : false,
-       icon :response.weatherIcon
+           icon :response.weatherIcon
      });
      this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
-
+    // console.log(this.state.city)
     } else {
       this.setState({
         error:true
@@ -103,8 +94,17 @@ class App extends React.Component {
   }
   render() {
      return (
-    <div className="App">
-      <Form loadweather={this.getWeather} error={this.state.error}/>
+    <div className="countainer">
+      
+      {this.state.city ? "" : 
+      <p>please select your city and country</p>
+      }
+      {/* <Form loadweather={this.getWeather} 
+      error={this.state.error}/> */}
+       
+       <FormApi loadweather={this.getWeather} error={this.state.error}/>
+      
+       
       <Weather city={this.state.city}
        country={this.state.country}
         temp_cel={this.state.temp_cel}
@@ -112,7 +112,6 @@ class App extends React.Component {
       temp_min={this.state.temp_min} 
       description={this.state.description}
        weatherIcon={this.state.icon}
-      
       />
     </div>
      )

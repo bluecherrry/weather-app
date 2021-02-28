@@ -1,9 +1,54 @@
-
-form input[name="city"],form input[name="country"] {
-  background-color: aliceblue;
+ 
+ form input[name="city"],form input[name="country"] {
+  background-color: rgb(224, 235, 245);
   color:black ;padding: 10px 15px;
   border-radius: 10px;outline-style: none;
+  outline: none;border: none;margin:10px;
+} 
+
+form input:hover {
+  background-color: #ffff;
 }
-button {border-radius: 10px;
-padding: 10px 15px;margin-top: 1rem;
+ button {border-radius: 10px;
+padding: 10px 15px;margin-top: 1rem;outline: none;border: none;
+} button:hover{
+  background-color: white;
+}
+
+
+
+.forms{
+ 
+  position: relative;left: 24%;
+ text-align: center;
+ width: 50%;color: white;
+}
+.element { display: inline-block ;margin-left:1rem;text-align: left;
+}
+.elements { display: inline-block ;margin-left:2rem;
+}
+.element{
+  
+  width: 14em;border-radius: 10px;
+  height: 100%;
+}
+.element::-webkit-scrollbar {
+  display: none;
+}
+ul{background-color: rgb(255, 255, 255);
+  height: 10em;border-radius: 10px;
+   line-height: 2.5em;
+  float: left;
+  overflow: scroll;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+li{ font-size: 0.8rem;
+ 
+  border-bottom: 1px solid rgb(167, 165, 165);width: 100%;
+  color:black;list-style-type: none;display: inline-block;
+}
+.error{
+  padding: 10px 15px;
+  text-align: center;
 }

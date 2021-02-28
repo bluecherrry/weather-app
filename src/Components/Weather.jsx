@@ -23,12 +23,15 @@ export default function Weather(props) {
       </h3>
         {/* get cel */}
        {/* <h2>{props.temp_cel} </h2>      */}
-       {props.temp_cel ? (
+       {props.temp_cel && 
           <h1>{props.temp_cel}&deg;</h1> 
 
-        ) : null}
+        }
  
-       {minmaxTemp(props.temp_min,props.temp_max)}
+       {
+          props.temp_min && 
+           minmaxTemp(props.temp_min,props.temp_max)
+        }
         
        <h5>{props.description}</h5>
       </div>
